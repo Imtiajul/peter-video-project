@@ -6,7 +6,7 @@ interface MainLayoutProps {
 
 export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
   return (
-    <div className="relative flex flex-col w-full min-h-screen bg-white">
+    <div className="">
       {children}
     </div>
   );

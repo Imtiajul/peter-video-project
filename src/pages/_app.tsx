@@ -29,7 +29,7 @@ const App: FC<EnhancedAppProps> = (props) => {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
-        <title>Brick</title>
+        <title>Video Hosting</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <Toaster position="top-center" />

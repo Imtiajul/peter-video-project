@@ -20,11 +20,13 @@ const GenericPage: NextPage = () => {
   }, [id]);
 
   return videoInfo['vid-exists'] ? (
-    <div>    <>
+    <div className='bg-black min-h-screen'>    <>
       <Head>
         <title>Home</title>
       </Head>
+
       <MuxVideo
+        className="flex-auto md:w-2/3 md:basis-2/3 w-full md:pr-8 content-center"
         style={{ height: "100%", maxWidth: "100%" }}
         playbackId={videoInfo["playback-id"]}
         metadata={{
@@ -35,7 +37,15 @@ const GenericPage: NextPage = () => {
         streamType="on-demand"
         controls
       />
-    </></div>) : (
+    </>
+    <div> 
+      <div>
+        <div className='bg-gray-200'>Video for </div>
+        <div className='bg-gray-200'>Video for </div>
+      </div>
+      <div className='bg-gray-200'><button> Buy Now </button></div>
+      </div> 
+    </div>) : (
 
     <div>    <>
       vid does not exist
