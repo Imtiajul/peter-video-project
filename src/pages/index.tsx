@@ -24,7 +24,6 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Home</title>
-        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
       </Head>
 
       <div className="relative overflow-hidden">
