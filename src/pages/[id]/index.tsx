@@ -3,8 +3,9 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { MainLayout } from "../../components/widgets/MainLayout";
 import MuxVideo from "@mux/mux-video-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
+import { useMounted } from "src/hooks/use-mounted";
 
 const GenericPage: NextPage = () => {
   const router = useRouter();
@@ -12,33 +13,26 @@ const GenericPage: NextPage = () => {
   const [videoInfo, setVideoInfo] = useState<any>({});
   const [isVideoOn, setIsVideoOn] = useState(false);
   const [isEnded, setIsEnded] = useState(false);
-  let myVideo;
-
+  const myVideo = useRef(null);
   useEffect(() => {
     (async () => {
       const resData = await axios.get("https://salesvids.applikuapp.com/api/get_single_video/" + id)
       setVideoInfo(resData.data);
     })();
   }, [id]);
-
-  const play = () => {
+  
+  const playVideo = (nn:any) => {
     setIsVideoOn(true);
-    myVideo = document.querySelector('#video-id-123456');
-    myVideo?.addEventListener('loaded', function () {
-      console.log('Loadede');
-
-    })
-    if (myVideo) {
-      myVideo.play();
-      myVideo.addEventListener('ended', function () {
+    if (nn.current) {
+      nn?.current?.play();
+      nn.current.addEventListener('ended', function () {
         setIsEnded(true);
       });
-      myVideo.onplaying = function () {
+      nn.current.onplaying = function () {
         setIsEnded(false);
       };
     }
   }
-
   return videoInfo['vid-exists'] ? (
     <div className='bg-black min-h-screen bg-[#111827] sm:p-12'>    <>
       <Head>
@@ -54,6 +48,7 @@ const GenericPage: NextPage = () => {
               style={{ height: "100%", maxWidth: "100%" }}
               playbackId={videoInfo["playback-id"]}
               id="video-id-123456"
+              ref={myVideo}
               metadata={{
                 video_id: "video-id-123456",
                 video_title: "video.title",
@@ -62,7 +57,7 @@ const GenericPage: NextPage = () => {
               streamType="on-demand"
               controls
             />
-            <div onClick={play} className={`absolute cursor-pointer inset-0 m-auto w-max h-max ${isVideoOn ? 'hidden' : 'block'}`} >
+            <div onClick={()=>{playVideo(myVideo)}} className={`absolute cursor-pointer inset-0 m-auto w-max h-max ${isVideoOn ? 'hidden' : 'block'}`} >
               <svg fill="#ef4444" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-20 h-20">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
@@ -80,7 +75,7 @@ const GenericPage: NextPage = () => {
                 </button>
 
               </div>
-              <button onClick={play} className="bg-[#ffffff25] rounded-lg mt-12 text-[#fff] px-4 py-2">
+              <button onClick={()=>{playVideo(myVideo)}} className="bg-[#ffffff25] rounded-lg mt-12 text-[#fff] px-4 py-2">
                 Watch Again
               </button>
             </div>
