@@ -24,7 +24,7 @@ const GenericPage: NextPage = () => {
       <Head>
         <title>Video</title>
       </Head>
-      <div className="h-screen flex items-center justify-center">
+      <div className="">
         <MuxVideo
           className="w-6/10 h-6/10 mx-auto my-auto"
           style={{ maxWidth: "100%" }}
