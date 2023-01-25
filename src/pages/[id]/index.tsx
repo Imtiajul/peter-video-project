@@ -20,7 +20,7 @@ const GenericPage: NextPage = () => {
   }, [id]);
 
   return videoInfo['vid-exists'] ? (
-    <div className='bg-black min-h-screen'>    <>
+    <div className='bg-black'>    <>
       <Head>
         <title>Video</title>
       </Head>
