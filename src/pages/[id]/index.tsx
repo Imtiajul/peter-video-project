@@ -22,33 +22,33 @@ const GenericPage: NextPage = () => {
   return videoInfo['vid-exists'] ? (
     <div className='bg-black min-h-screen'>    <>
       <Head>
-        <title>Home</title>
+        <title>Video</title>
       </Head>
-
-      <MuxVideo
-        className="flex-auto md:w-2/3 md:basis-2/3 w-full md:pr-8 content-center"
-        style={{ height: "100%", maxWidth: "100%" }}
-        playbackId={videoInfo["playback-id"]}
-        metadata={{
-          video_id: "video-id-123456",
-          video_title: "video.title",
-          viewer_user_id: "video.user_id",
-        }}
-        streamType="on-demand"
-        controls
-      />
-    </>
-    <div> 
-      <div>
-        <div className='bg-gray-200'>Video for </div>
-        <div className='bg-gray-200'>Video for </div>
+      <div className="h-screen flex items-center justify-center">
+        <MuxVideo
+          className="w-6/10 h-6/10 mx-auto my-auto"
+          style={{ maxWidth: "100%" }}
+          playbackId={videoInfo["playback-id"]}
+          metadata={{
+            video_id: "video-id-123456",
+            video_title: "video.title",
+            viewer_user_id: "video.user_id",
+          }}
+          streamType="on-demand"
+          controls
+        />
       </div>
-      <div className='bg-gray-200'><button> Buy Now </button></div>
-      </div> 
+    </>
+      <div>
+        <div>
+          {/* <div className='bg-gray-200'>Video for </div>
+        <div className='bg-gray-200'>Tom Sallic </div> */}
+        </div>
+        {/* <div className='bg-gray-200'><button> Buy Now </button></div> */}
+      </div>
     </div>) : (
 
     <div>    <>
-      vid does not exist
     </></div>
   );
 
