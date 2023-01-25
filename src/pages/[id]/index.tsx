@@ -26,7 +26,6 @@ const GenericPage: NextPage = () => {
       </Head>
       <div className="">
         <MuxVideo
-          className=""
           style={{ maxWidth: "100%" }}
           playbackId={videoInfo["playback-id"]}
           metadata={{

@@ -6,20 +6,6 @@ import MuxVideo from "@mux/mux-video-react";
 import { useEffect, useState } from "react";
 
 const Home: NextPage = () => {
-  const [videoInfo, setVideoInfo] = useState<any>({});
-
-  useEffect(() => {
-    (function () {
-      axios
-        .get("https://salesvids.applikuapp.com/api/get_single_video")
-        .then((resData) => {
-          setVideoInfo(resData);
-        });
-    })();
-  }, []);
-
-  console.log("videoInfo", videoInfo);
-
   return (
     <>
       <Head>
