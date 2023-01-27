@@ -1,10 +1,10 @@
+import MuxVideo from "@mux/mux-video-react";
+import axios from "axios";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { MainLayout } from "../../components/widgets/MainLayout";
-import MuxVideo from "@mux/mux-video-react";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { MainLayout } from "../../components/widgets/MainLayout";
 
 const GenericPage: NextPage = () => {
   const router = useRouter();
