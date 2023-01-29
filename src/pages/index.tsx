@@ -1,9 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import axios from "axios";
 import { MainLayout } from "src/components/widgets/MainLayout";
-import MuxVideo from "@mux/mux-video-react";
-import { useEffect, useState } from "react";
 
 const Home: NextPage = () => {
   return (
@@ -26,7 +23,7 @@ const Home: NextPage = () => {
                     <button type="button" className="focus-ring-inset inline-flex items-center justify-center rounded-md bg-gray-900 p-2 text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-white" aria-expanded="false">
                       <span className="sr-only">Open main menu</span>
                       <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                       </svg>
                     </button>
                   </div>
@@ -50,7 +47,7 @@ const Home: NextPage = () => {
                   <button type="button" className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600">
                     <span className="sr-only">Close menu</span>
                     <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </button>
                 </div>
@@ -85,12 +82,12 @@ const Home: NextPage = () => {
                     <h1
                       className="font-extrabold text-transparent text-8xl bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500"
                     >
-                      All your videos hosted. 
+                      All your videos hosted.
                     </h1>
                     <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">Reliable hosting for your videos</p>
                     <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">(12/12/22: Due to high server costs, we are pausing all video upload atm)</p>
 
-                    
+
                     <div className="mt-10 sm:mt-12">
                       <form action="#" className="sm:mx-auto sm:max-w-xl lg:mx-0">
                         <div className="sm:flex">
