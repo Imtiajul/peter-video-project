@@ -1,13 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 * {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .roboto {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .hero-overlay {
@@ -24,4 +25,7 @@
 ::before,
 ::after {
   box-sizing: border-box; /* 1 */
+}
+.page-container {
+  max-width: clamp(768px, calc((100vh - 170px) * (16 / 9)), 1536px);
 }
