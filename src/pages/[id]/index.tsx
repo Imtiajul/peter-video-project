@@ -41,7 +41,7 @@ const GenericPage: NextPage = () => {
       <Head>
         <title>Video</title>
       </Head>
-      <div className="min-h-screen sm:p-12">
+      <div className="max-h-screen sm:p-12">
         <div className="page-container mx-auto flex flex-col md:flex-row items-center content-start">
           <div className="flex-auto md:w-2/3 md:basis-2/3 w-full md:pr-8">
             <div className="relative bg-black sm:rounded-md sm:shadow-md group aspect-video">
