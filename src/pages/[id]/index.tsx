@@ -13,6 +13,9 @@ const GenericPage: NextPage = () => {
   const [videoInfo, setVideoInfo] = useState<any>({});
   const [isPlay, setIsPlay] = useState(false)
   const [isEnd, setIsEnd] = useState(false)
+  const playbackId = videoInfo['playback-id'];
+  const name = videoInfo['name'];
+  const creator_name = videoInfo['creator-name'];
 
   const videoRef = useRef()
   useEffect(() => {
@@ -41,7 +44,7 @@ const GenericPage: NextPage = () => {
       <Head>
         <title>Video</title>
       </Head>
-      <div className="max-h-screen sm:p-12">
+      <div className="min-h-screen sm:p-12">
         <div className="page-container mx-auto flex flex-col md:flex-row items-center content-start">
           <div className="flex-auto md:w-2/3 md:basis-2/3 w-full md:pr-8">
             <div className="relative bg-black sm:rounded-md sm:shadow-md group aspect-video">
@@ -116,16 +119,16 @@ const GenericPage: NextPage = () => {
             <div className="mx-auto flex flex-col sm:flex-row items-center justify-between mt-10 gap-x-2 gap-y-8 px-4 sm:px-0">
               {/*  */}
               <div className="flex-1 w-full">
-                <div className="text-2xl font-bold">Video for @tom_salic
+                <div className="text-2xl font-bold">Video for {name}
                 </div>
                 <div className="mt-1 text-gray-400">Created by
                   <strong>
-                    Daniel Fazio (Cold Email Wizard)
+                    {creator_name}
                   </strong>
                 </div>
               </div>
               <div className="flex-1 sm:mt-0 flex justify-end items-center">
-                <a href="https://www.google.com" target="_blank" className={`rounded-md font-bold py-3 px-4 shadow-md transition focus:outline-none focus-visible:ring-2 ring-red-500 ring-opacity-40 ${isEnd ? 'bg-gray-500 hover:bg-gray-400 active:bg-gray-600 ring-gray-500' : 'bg-red-500 hover:bg-red-400 active:bg-red-600 ring-red-500'}`} rel="noreferrer">
+                <a href={playbackId} target="_blank" className={`rounded-md font-bold py-3 px-4 shadow-md transition focus:outline-none focus-visible:ring-2 ring-red-500 ring-opacity-40 ${isEnd ? 'bg-gray-500 hover:bg-gray-400 active:bg-gray-600 ring-gray-500' : 'bg-red-500 hover:bg-red-400 active:bg-red-600 ring-red-500'}`} rel="noreferrer">
                   <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" className="w-6 h-6 mr-3">
                     <g fill="none">
                       <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
