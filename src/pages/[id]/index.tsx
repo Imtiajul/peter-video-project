@@ -78,7 +78,7 @@ const GenericPage: NextPage = () => {
                     <div className="flex sm:flex-1">
                       <div className="m-auto flex flex-col items-center">
                         <h1 className="text-2xl sm:text-3xl font-bold">Video for {name}</h1>
-                        <h2 className="mt-2 text-gray-200">Created by  {creator_name}
+                        <h2 className="mt-2 text-gray-200">Created by  &ensp; <strong>{creator_name}</strong>
                         </h2>
                         <a href={cta_link} target="_blank" className="mt-6 md:mt-8 rounded-md font-bold py-3 px-4 shadow-md flex items-center justify-center bg-red-500 transition hover:bg-red-400 active:bg-red-600 focus:outline-none focus-visible:ring-2 ring-red-500 ring-opacity-40" rel="noreferrer">
                           <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" className="w-6 h-6 mr-3">
@@ -121,7 +121,7 @@ const GenericPage: NextPage = () => {
               <div className="flex-1 w-full">
                 <div className="text-2xl font-bold">Video for {name}
                 </div>
-                <div className="mt-1 text-gray-400">Created by
+                <div className="mt-1 text-gray-400">Created by&nbsp;
                   <strong>
                     {creator_name}
                   </strong>
