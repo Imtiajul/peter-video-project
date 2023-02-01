@@ -48,7 +48,7 @@ const GenericPage: NextPage = () => {
       </Head>
       <div className="min-h-screen">
         <div className="page-container mx-auto flex flex-col md:flex-row items-center content-start">
-          <div className="flex-auto md:w-2/3 md:basis-2/3 w-full md:pr-8">
+          <div className="flex-auto md:w-2/3 md:basis-2/3 w-full md:pr-8 mt-12">
             <div className="relative bg-black sm:rounded-md sm:shadow-md group aspect-video">
               <div >
                 <MuxVideo
@@ -81,12 +81,12 @@ const GenericPage: NextPage = () => {
                         <h2 className="mt-2 text-gray-200">Created by  &ensp; <strong>{creator_name}</strong>
                         </h2>
                         <a href={cta_link} target="_blank" className="mt-6 md:mt-8 rounded-md font-bold py-3 px-4 shadow-md flex items-center justify-center bg-red-500 transition hover:bg-red-400 active:bg-red-600 focus:outline-none focus-visible:ring-2 ring-red-500 ring-opacity-40" rel="noreferrer">
-                          <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" className="w-6 h-6 mr-3">
+                          <p><svg viewBox="0 0 24 24" width="1.2em" height="1.2em" className="w-6 h-6 mr-3">
                             <g fill="none">
                               <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                               </path>
                             </g>
-                          </svg> {cta_text}</a>
+                          </svg> {cta_text}</p></a>
                       </div>
                     </div>
 
@@ -128,12 +128,13 @@ const GenericPage: NextPage = () => {
                 </div>
               </div>
               <div className="flex-1 sm:mt-0 flex justify-end items-center">
-                <a href={cta_link} target="_blank" className={`rounded-md font-bold py-3 px-4 shadow-md transition focus:outline-none focus-visible:ring-2 ring-red-500 ring-opacity-40 ${isEnd ? 'bg-gray-500 hover:bg-gray-400 active:bg-gray-600 ring-gray-500' : 'bg-red-500 hover:bg-red-400 active:bg-red-600 ring-red-500'}`} rel="noreferrer">
+                <a href={cta_link} target="_blank" className={`display: inline-flex rounded-md font-bold py-3 px-4 shadow-md transition focus:outline-none focus-visible:ring-2 ring-red-500 ring-opacity-40 ${isEnd ? 'bg-gray-500 hover:bg-gray-400 active:bg-gray-600 ring-gray-500' : 'bg-red-500 hover:bg-red-400 active:bg-red-600 ring-red-500'}`} rel="noreferrer">
                   <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" className="w-6 h-6 mr-3">
                     <g fill="none">
                       <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       </path>
                     </g>
+                    
                   </svg> {cta_text} </a>
               </div>
             </div>
