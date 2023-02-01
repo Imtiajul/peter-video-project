@@ -16,6 +16,8 @@ const GenericPage: NextPage = () => {
   const playbackId = videoInfo['playback-id'];
   const name = videoInfo['name'];
   const creator_name = videoInfo['creator-name'];
+  const cta_link = videoInfo['cta-link'];
+  const cta_text = videoInfo['cta-text'];
 
   const videoRef = useRef<any>()
   useEffect(() => {
@@ -75,18 +77,16 @@ const GenericPage: NextPage = () => {
 
                     <div className="flex sm:flex-1">
                       <div className="m-auto flex flex-col items-center">
-                        <h1 className="text-2xl sm:text-3xl font-bold">Video for @tom_salic</h1>
-                        <h2 className="mt-2 text-gray-200">Created by
-                          <strong>Daniel Fazio (Cold Email Wizard)
-                          </strong>
+                        <h1 className="text-2xl sm:text-3xl font-bold">Video for {name}</h1>
+                        <h2 className="mt-2 text-gray-200">Created by  {creator_name}
                         </h2>
-                        <a href="https://www.ClientAscension.com" target="_blank" className="mt-6 md:mt-8 rounded-md font-bold py-3 px-4 shadow-md flex items-center justify-center bg-red-500 transition hover:bg-red-400 active:bg-red-600 focus:outline-none focus-visible:ring-2 ring-red-500 ring-opacity-40" rel="noreferrer">
+                        <a href={cta_link} target="_blank" className="mt-6 md:mt-8 rounded-md font-bold py-3 px-4 shadow-md flex items-center justify-center bg-red-500 transition hover:bg-red-400 active:bg-red-600 focus:outline-none focus-visible:ring-2 ring-red-500 ring-opacity-40" rel="noreferrer">
                           <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" className="w-6 h-6 mr-3">
                             <g fill="none">
                               <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                               </path>
                             </g>
-                          </svg> 200-300 appointments per month system</a>
+                          </svg> {cta_text}</a>
                       </div>
                     </div>
 
@@ -128,13 +128,13 @@ const GenericPage: NextPage = () => {
                 </div>
               </div>
               <div className="flex-1 sm:mt-0 flex justify-end items-center">
-                <a href={playbackId} target="_blank" className={`rounded-md font-bold py-3 px-4 shadow-md transition focus:outline-none focus-visible:ring-2 ring-red-500 ring-opacity-40 ${isEnd ? 'bg-gray-500 hover:bg-gray-400 active:bg-gray-600 ring-gray-500' : 'bg-red-500 hover:bg-red-400 active:bg-red-600 ring-red-500'}`} rel="noreferrer">
+                <a href={cta_link} target="_blank" className={`rounded-md font-bold py-3 px-4 shadow-md transition focus:outline-none focus-visible:ring-2 ring-red-500 ring-opacity-40 ${isEnd ? 'bg-gray-500 hover:bg-gray-400 active:bg-gray-600 ring-gray-500' : 'bg-red-500 hover:bg-red-400 active:bg-red-600 ring-red-500'}`} rel="noreferrer">
                   <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" className="w-6 h-6 mr-3">
                     <g fill="none">
                       <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       </path>
                     </g>
-                  </svg> 200-300 appointments per month system</a>
+                  </svg> {cta_text} </a>
               </div>
             </div>
             {/* Bottom Button*/}
