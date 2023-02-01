@@ -17,7 +17,7 @@ const GenericPage: NextPage = () => {
   const name = videoInfo['name'];
   const creator_name = videoInfo['creator-name'];
 
-  const videoRef = useRef(null);
+  const videoRef = useRef<any>()
   useEffect(() => {
     (async () => {
       const resData = await axios.get("https://salesvids.applikuapp.com/api/get_single_video/" + id)
