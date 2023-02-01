@@ -49,7 +49,7 @@ const GenericPage: NextPage = () => {
       <div className="min-h-screen">
         <div className="page-container mx-auto flex flex-col md:flex-row items-center content-start">
           <div className="flex-auto md:w-2/3 md:basis-2/3 w-full md:pr-8 mt-12">
-            <div className="relative bg-black sm:rounded-md sm:shadow-md group aspect-video">
+            <div className="relative sm:rounded-md sm:shadow-md group aspect-video">
               <div >
                 <MuxVideo
                   ref={videoRef}
