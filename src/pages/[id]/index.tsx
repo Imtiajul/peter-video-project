@@ -73,7 +73,7 @@ const GenericPage: NextPage = () => {
               {/* Modal Video */}
               {
                 isEnd && (
-                  <div className={`absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-70 sm:p-8 md:p-12 lg:p-16 transition transform duration-200 `}>
+                  <div className={`absolute inset-0 flex flex-col items-center justify-center bg-opacity-70 sm:p-8 md:p-12 lg:p-16 transition transform duration-200 `}>
 
                     <div className="flex sm:flex-1">
                       <div className="m-auto flex flex-col items-center">
