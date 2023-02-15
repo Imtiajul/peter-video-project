@@ -13,17 +13,35 @@ const GenericPage: NextPage = () => {
   const [videoInfo, setVideoInfo] = useState<any>({});
   const [isPlay, setIsPlay] = useState(false)
   const [isEnd, setIsEnd] = useState(false)
-  const playbackId = videoInfo['playback-id'];
+  const [playbackId, setPlaybackId] = useState("");
   const name = videoInfo['name'];
+  const thumbNailUrl = `https://image.mux.com/${playbackId}/thumbnail.png`
   const creator_name = videoInfo['creator-name'];
   const cta_link = videoInfo['cta-link'];
   const cta_text = videoInfo['cta-text'];
 
   const videoRef = useRef<any>()
+  //const [ setPlaybackId] = useState("");
+
   useEffect(() => {
     (async () => {
       const resData = await axios.get("https://salesvids.applikuapp.com/api/get_single_video/" + id)
+      const playbackId = resData.data["playback-id"];
+      const name = resData.data['name'];
+      const thumbNailUrl = `https://image.mux.com/${playbackId}/thumbnail.png`
       setVideoInfo(resData.data);
+      setPlaybackId(playbackId);
+  //     if (playbackId) {
+  //       thumbNailUrl = `https://image.mux.com/${playbackId}/thumbnail.png`;
+  //       const metaTag = document.querySelector("meta[property='og:image']");
+  //       if (metaTag) {
+  //         metaTag.setAttribute("content", thumbnailUrl);
+  //       }
+
+  //       if (name) {
+  //         document.title = `Video for ${name}`;
+  //       }
+  // }
     })();
   }, [id]);
 
@@ -44,7 +62,8 @@ const GenericPage: NextPage = () => {
   return videoInfo['vid-exists'] ? (
     <div className='bg-gray-900 text-white h-screen m-auto'>
       <Head>
-        <title>Video</title>
+        <title>Video for {name}</title>
+        <meta property="og:image" content={thumbNailUrl} />
       </Head>
       <div className="min-h-screen">
         <div className="page-container mx-auto flex flex-col md:flex-row items-center content-start">
@@ -138,18 +157,9 @@ const GenericPage: NextPage = () => {
                   </svg> {cta_text} </a>
               </div>
             </div>
-            {/* Bottom Button*/}
           </div>
         </div>
       </div >
-
-      <div>
-        <div>
-          {/* <div className='bg-gray-200'>Video for </div>
-        <div className='bg-gray-200'>Tom Sallic </div> */}
-        </div>
-        {/* <div className='bg-gray-200'><button> Buy Now </button></div> */}
-      </div>
     </div>) : (
 
     <div>    <>
