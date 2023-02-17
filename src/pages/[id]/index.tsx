@@ -67,7 +67,9 @@ const GenericPage: NextPage = () => {
       </Head>
       <div className="min-h-screen">
         <div className="page-container mx-auto flex flex-col md:flex-row items-center content-start">
+          
           <div className="flex-auto md:w-2/3 md:basis-2/3 w-full md:pr-8 mt-12">
+            
             <div className="relative bg-black sm:rounded-md sm:shadow-md group aspect-video">
               <div >
                 <MuxVideo
@@ -99,7 +101,7 @@ const GenericPage: NextPage = () => {
                         <h1 className="text-2xl sm:text-3xl font-bold">Video for {name}</h1>
                         <h2 className="mt-2 text-gray-200">Created by  &ensp; <strong>{creator_name}</strong>
                         </h2>
-                        <a href={cta_link} target="_blank" className="mt-6 md:mt-8 rounded-md font-bold py-3 px-4 shadow-md flex items-center justify-center bg-red-500 transition hover:bg-red-400 active:bg-red-600 focus:outline-none focus-visible:ring-2 ring-red-500 ring-opacity-40" rel="noreferrer">
+                        <a href={cta_link} target="_blank" className="mt-6 md:mt-8 rounded-md font-bold py-3 px-4 shadow-md flex items-center justify-center bg-blue-500 transition hover:bg-blue-400 active:bg-blue-600 focus:outline-none focus-visible:ring-2 ring-blue-500 ring-opacity-40" rel="noreferrer">
                           <p><svg viewBox="0 0 24 24" width="1.2em" height="1.2em" className="w-6 h-6 mr-3">
                             <g fill="none">
                               <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -123,7 +125,7 @@ const GenericPage: NextPage = () => {
               {
                 (!isPlay && !isEnd) && (
                   <div className="absolute inset-0 cursor-pointer flex flex-col content-center transition transform duration-200">
-                    <div className="m-auto sm:w-24 sm:h-24 w-20 h-20 bg-red-500 rounded-full shadow-lg transform group-hover:scale-105 transition" onClick={handlePlayVideo}>
+                    <div className="m-auto sm:w-24 sm:h-24 w-20 h-20 bg-blue-500 rounded-full shadow-lg transform group-hover:scale-105 transition" onClick={handlePlayVideo}>
                       <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" className="m-auto sm:w-24 sm:h-24 w-20 h-20">
                         <path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.69L9.54 5.98A.998.998 0 0 0 8 6.82z" fill="currentColor" />
 
@@ -147,7 +149,7 @@ const GenericPage: NextPage = () => {
                 </div>
               </div>
               <div className="flex-1 sm:mt-0 flex sm:justify-end justify-center items-center w-full">
-                <a href={cta_link} target="_blank" className={`display: inline-flex rounded-md font-bold py-3 px-4 shadow-md transition focus:outline-none focus-visible:ring-2 ring-red-500 ring-opacity-40 sm:max-w-[343px] w-full ${isEnd ? 'bg-gray-500 hover:bg-gray-400 active:bg-gray-600 ring-gray-500' : 'bg-red-500 hover:bg-red-400 active:bg-red-600 ring-red-500'}`} rel="noreferrer">
+                <a href={cta_link} target="_blank" className={`display: inline-flex rounded-md font-bold py-3 px-4 shadow-md transition focus:outline-none focus-visible:ring-2 ring-blue-500 ring-opacity-40 sm:max-w-[343px] w-full ${isEnd ? 'bg-gray-500 hover:bg-gray-400 active:bg-gray-600 ring-gray-500' : 'bg-blue-500 hover:bg-blue-400 active:bg-blue-600 ring-blue-500'}`} rel="noreferrer">
                   <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" className="w-6 h-6 mr-3">
                     <g fill="none">
                       <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
