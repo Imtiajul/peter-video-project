@@ -66,6 +66,7 @@ const GenericPage: NextPage<props> = ({ id }) => {
     <div className="h-screen m-auto text-white bg-gray-900">
       <Head>
         <title>Video for name</title>
+        <meta property="og:type" content="website" />
         <meta property="og:image" content={thumbNailUrl} />
       </Head>
       <div className="min-h-screen">
