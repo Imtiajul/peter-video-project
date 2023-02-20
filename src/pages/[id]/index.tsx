@@ -53,6 +53,7 @@ const GenericPage: NextPage = () => {
       <Head>
         <title>Video for {name}</title>
         <meta property="og:title" content={`Video for ${name}`} />
+        <meta property="og:description" content={`Video for ${name}`} />
         <meta property="og:image" content={thumbNailUrl} />
       </Head>
       <div className="min-h-screen">
