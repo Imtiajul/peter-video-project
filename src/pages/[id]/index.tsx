@@ -62,10 +62,10 @@ const GenericPage: NextPage<props> = ({ id }) => {
     videoRef.current.play();
   };
 
-  return videoInfo["vid-exists"] ? (
+  return videoInfo(
     <div className="h-screen m-auto text-white bg-gray-900">
       <Head>
-        <title>Video for name</title>
+        <title>Video for {name}</title>
         <meta property="og:image" content={thumbNailUrl} />
       </Head>
       <div className="min-h-screen">
@@ -223,11 +223,6 @@ const GenericPage: NextPage<props> = ({ id }) => {
           </div>
         </div>
       </div>
-    </div>
-  ) : (
-    <div>
-      {" "}
-      <></>
     </div>
   );
 };
