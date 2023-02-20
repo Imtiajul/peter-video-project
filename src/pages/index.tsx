@@ -6,8 +6,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title key='home'>Home</title>
-        <meta property="og:type" content="website" />
+        <title>Home</title>
       </Head>
 
       <div className="relative overflow-hidden">
