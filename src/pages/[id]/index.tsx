@@ -31,17 +31,6 @@ const GenericPage: NextPage = () => {
       const thumbNailUrl = `https://image.mux.com/${playbackId}/thumbnail.png`
       setVideoInfo(resData.data);
       setPlaybackId(playbackId);
-  //     if (playbackId) {
-  //       thumbNailUrl = `https://image.mux.com/${playbackId}/thumbnail.png`;
-  //       const metaTag = document.querySelector("meta[property='og:image']");
-  //       if (metaTag) {
-  //         metaTag.setAttribute("content", thumbnailUrl);
-  //       }
-
-  //       if (name) {
-  //         document.title = `Video for ${name}`;
-  //       }
-  // }
     })();
   }, [id]);
 
@@ -63,6 +52,7 @@ const GenericPage: NextPage = () => {
     <div className='bg-gray-900 text-white h-screen m-auto'>
       <Head>
         <title>Video for {name}</title>
+        <meta property="og:title" content={`Video for ${name}`} />
         <meta property="og:image" content={thumbNailUrl} />
       </Head>
       <div className="min-h-screen">
