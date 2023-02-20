@@ -29,6 +29,9 @@ const App: FC<EnhancedAppProps> = (props) => {
   return (
     <CacheProvider value={emotionCache}>
       <Toaster position="top-center" />
+      <Head>
+        <title>All Your Video Hosted</title>
+      </Head>
       {getLayout(<Component {...pageProps} />)}
     </CacheProvider>
   );
