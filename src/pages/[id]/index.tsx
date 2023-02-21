@@ -232,8 +232,8 @@ GenericPage.getLayout = (page) => <MainLayout>{page}</MainLayout>
 
 export default GenericPage
 
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-  let data = await fetch(`https://app.vidscale.io/api/get_single_video/${params.id}`)
+export const getServerSideProps: GetServerSideProps = async ({query}) => {
+  let data = await fetch(`https://app.vidscale.io/api/get_single_video/${query.id}`)
   let getResData = await data.json()
   return {
     props: {getResData},
